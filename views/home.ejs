@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>MyKitchen App</title>
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="/stylesheets/home.css">
+        <!-- Google font -->
+        <link href="https://fonts.googleapis.com/css?family=Marck+Script" rel="stylesheet">
+</head>
+<body>
+
+    <!-- navbar from bootstrap -->
+            <nav class="navbar  navbar-inverse navbar-fixed-top">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a id="brand" class="navbar-brand" href="/">MyKitchen</a>
+                    </div>
+                    <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">    
+                                                    
+                                <% if(!currentUser){ %>
+                                    <li> <a id="login" href="/login">Login</a></li>
+                                    <li> <a id="signUp" href="/register">Sign-Up</a></li> 
+
+                                <% } else{ %>
+
+                                    <li> <a id="new" href="/inventory/new">Add new ingredient</a></li> 
+                                    <li> <a href="/logout">Logout</a></li>
+                                <% } %>
+                          
+                                                                                                    
+                    </ul>
+                 </div>
+               </div>
+            </nav>
+
+
+<div class="container text-center" id="containerHome">
+	<h1>The Kitchen Inventory App</h1>
+	<a href="/inventory"><input class="btn btn-success" type="Button" value="Check your inventory"></a>
+</div>
+
+
+<% include ./partials/footer %>

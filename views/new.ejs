@@ -1,0 +1,33 @@
+<% include ./partials/header %>
+
+<div class="container">
+  <h1 class="text-center">Add a new ingredient item</h1>
+
+    <div >      
+        <form action="/inventory" method="POST" class="form">
+        	<!-- <div class="form-group">
+	            <label>Ingredient's picture:</label>
+	            <input type="file" name="photo" accept="image/*" class="form-control">
+          	</div> -->
+          	<div class="form-group">
+	            <label>Ingredient's picture:</label>
+	            <input type="text" name="photo"  placeholder="Image's URL" class="form-control">
+          	</div>
+            <div class="form-group">
+                <label>Name:</label>
+                <input type="text" name="name" placeholder="Name" class="form-control">
+            </div>        
+          <div class="form-group">
+            <label>Number of items:</label>
+            <input type="number" name="number" placeholder="Number" class="form-control" min="0">
+          </div>     
+          <div class="form-group">
+            <div class="text-center"><label>Or check ingredient item if in stock:</label></div>
+            <input type="checkbox" name="checkbox" class="form-control">
+          </div>                                 
+          <button class="text-center btn btn-success form-control" type="submit">Submit</button>
+      </form>
+    </div>    
+</div>
+
+<% include ./partials/footer %>

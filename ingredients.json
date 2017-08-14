@@ -1,0 +1,21 @@
+{
+  "onions": 4,
+  "beefsteak": 1,
+  "garlic": 3,
+  "red pepper": 5,
+  "thyme": 1,
+  "slice of bread": 8,
+  "emmental": 1,
+  "mozzarella": 1,
+  "lettuce": 2,
+  "tomatoes": 3,
+  "eggs": 2,
+  "chocolate": 2,
+  "flour": true,
+  "brown sugar": true,
+  "vinegar": true,
+  "white vinegar": true,
+  "olive oil": true,
+  "paprika": true,
+  "butter": true
+}

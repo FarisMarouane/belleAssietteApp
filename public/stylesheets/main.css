@@ -1,0 +1,66 @@
+body {
+	/*background: url("../pictures/kitchpic2.jpg") no-repeat center center fixed ; */
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+	margin-top: 80px;
+	margin-bottom: 50px;
+}
+  
+.editIngredientForm{
+  display: none;
+}
+
+.deleteIngredientForm{
+  display: none;
+}
+
+#ingredient-img{
+	width:  250px;
+    height: 250px;
+    margin: 0 auto ;
+}
+
+#ingredient-img-invt{
+	width:  150px;
+    height: 150px;
+    margin: 0 auto ;
+}
+
+#containerHome{
+	margin-top: 40vh; /* poussé de la moitié de hauteur de viewport */
+  transform: translateY(-40%);  tiré de la moitié de sa propre hauteur 
+}
+
+.containerLogin-register{
+  margin-top: 20vh; /* poussé de la moitié de hauteur de viewport */
+  transform: translateY(-20%); /* tiré de la moitié de sa propre hauteur */
+}
+
+.inventory-thumbnail{ 
+  height: 360px;
+}
+
+.form{
+	width: 30%;
+	margin:auto;
+}
+
+/*Animation that creates flashing color when an ingredient is out of stock*/
+.out-of-stock {
+  width: 100%;   
+ -webkit-animation: flashing-color 3s infinite; /* Safari 4+ */
+  -moz-animation:    flashing-color 3s infinite; /* Fx 5+ */
+  -o-animation:      flashing-color 3s infinite; /* Opera 12+ */
+  animation:         flashing-color 3s infinite; /* IE 10+, Fx 29+ */
+}
+
+@-webkit-keyframes flashing-color {
+0%, 49% {
+    background-color: red;
+}
+50%, 100% {
+    background-color: white;
+}
+}

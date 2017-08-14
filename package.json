@@ -1,0 +1,27 @@
+{
+  "name": "labelleassiette",
+  "version": "2.0.0",
+  "description": "Kitchen inventory app",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/LaBelleAssiette/jobs.git"
+  },
+  "author": "marouane faris",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "connect-flash": "^0.1.1",
+    "ejs": "^2.5.7",
+    "express": "^4.15.4",
+    "express-session": "^1.15.5",
+    "method-override": "^2.3.9",
+    "mongoose": "^4.11.6",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^4.1.0"
+  }
+}
