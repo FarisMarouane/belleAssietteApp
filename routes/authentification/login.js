@@ -50,7 +50,8 @@ router.post("/register", function(req, res){
 router.post("/login", passport.authenticate("local", {
 	successRedirect:"/inventory",
 	failureRedirect:"/login",
-	successFlash: "You have been successfully logged in"
+	successFlash: "You have been successfully logged in",
+	failureFlash: true
 }))
 
  
