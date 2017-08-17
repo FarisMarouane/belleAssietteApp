@@ -3,7 +3,7 @@
 <div class="container">
 
 	<% if(!currentUser){ %>
-		<h1 style="margin-bottom:25px" class="text-center">Welcome<name of current user></h1>
+		<h1 style="margin-bottom:25px" class="text-center">Welcome</h1>
 <%} else{ %>
 		<h1 style="margin-bottom:25px" class="text-center">Welcome <%=currentUser.username%> <name of current user></h1>
 
@@ -22,12 +22,13 @@
 		   
 
 				<%  ingredients.forEach(function(ingredient) {%>
+
 					<div class="col-sm-4 col-md-3">
 						<div  class="thumbnail inventory-thumbnail">
 							<i class="fa fa-times pull-right fa-1x" aria-hidden="true" title="Delete ingredient"></i>
 
 							<!--  Invisible delete form to send delete Ajax requests through the cross sign on the top right corner-->
-		      					<form action="/inventory/<%=ingredient._id%>?_method=DELETE" method="POST" class="text-center deleteIngredientForm">		          
+		      					<form action="/inventory/<%=ingredient._id%>?_method=DELETE" method="POST" class="text-center deleteIngredientForm">	          
 				                	<input  class="btn btn-danger" type="submit" value="Delete">
 		                		</form>	 
 

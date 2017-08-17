@@ -16,7 +16,7 @@
                     				<p class="out-of-stock">Out of stock</p>
                     			<%}%>	
 
-                    			<p>This ingredient was added by <%=ingredient.author.username%></p>
+                    			<p>This ingredient was added by <%=(ingredient.author.id).toString()%> and <%=(currentUser._id).toString()%></p>
 																					
                 			</div>	                                				
 
