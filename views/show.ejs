@@ -1,34 +1,39 @@
 <% include ./partials/header %>
-
-	<div  class="container container-show" >
-		<div class="row">
-			<div class="col-md-6 col-sm-8 col-md-offset-3 col-sm-offset-2">
-					<div style="padding-bottom:25px"  class="thumbnail">
-							<img style="width:80%" id="ingredient-img" class="img-responsive img-circle" src="<%=ingredient.photoName%>" alt="Ingredient picture">
-							<div class="caption text-center">
-                    			<p><%=ingredient.name%></p>
-                    			<%if(ingredient.number){ %>
-                    				<p> <%=ingredient.number%> <%=ingredient.name%> left</p>
-                    			<%}%>
-                    			<% if(ingredient.exist){ %>
-                    				<p> <%=ingredient.name%> In stock</p>
+    <div class="container container-show">
+        <div class="row">
+            <div class="col-md-6 col-sm-8 col-md-offset-3 col-sm-offset-2">
+                <div style="padding-bottom:25px" class="thumbnail">
+                    <img style="width:80%" id="ingredient-img" class="img-responsive img-circle" src="<%=ingredient.photoName%>" alt="Ingredient picture">
+                    <div class="caption text-center">
+                    	<p>
+                    		<%=ingredient.name%>
+                    	</p>
+                    	<%if(ingredient.number){ %>
+                    	<p>
+                    		<%=ingredient.number%>
+                    		<%=ingredient.name%> left</p>
+                    		<%}%>
+                    		<% if(ingredient.exist){ %>
+                    		<p>
+                    			<%=ingredient.name%> In stock</p>
                     			<% } else if(!ingredient.number){ %>
-                    				<p class="out-of-stock">Out of stock</p>
-                    			<%}%>	
-
-                    			<p>This ingredient was added by <%=(ingredient.author.id).toString()%> and <%=(currentUser._id).toString()%></p>
-																					
-                			</div>	                                				
-
-		                		<form action="/inventory/<%=ingredient._id%>?_method=DELETE" method="POST" class="text-center show-delete-form">
-		                		<!-- <form class="formNew text-center" action="/inventory/<%=ingredient._id%>" method="POST"> -->
-		                				<a class="btn btn-warning" href="/inventory/<%=ingredient._id%>/edit">Edit</a>
-		                				<input  class="btn btn-danger" type="submit" value="Delete">
-		                		</form>	 
-		                		<a href="/inventory"class="pull-right">Go back to inventory</a>               		        			                				                	            	
-					</div>	
-			</div>
-		</div>
-	</div>
-
-<% include ./partials/footer %>
+                    			<p class="out-of-stock">Out of stock</p>
+                    			<%}%>
+                    			<p>This ingredient was added by
+                    				<%=(ingredient.author.username)%> on
+                    				<%=(ingredient.dateCreatedAt).getMonth() + 1%>/
+                    				<%=(ingredient.dateCreatedAt).getDate()%>/
+                    				<%=(ingredient.dateCreatedAt).getFullYear()%>
+                    			</p>
+                    </div>
+                    <form action="/inventory/<%=ingredient._id%>?_method=DELETE" method="POST" class="text-center show-delete-form">
+                        <!-- <form class="formNew text-center" action="/inventory/<%=ingredient._id%>" method="POST"> -->
+                        <a class="btn btn-warning" href="/inventory/<%=ingredient._id%>/edit">Edit</a>
+                        <input class="btn btn-danger" type="submit" value="Delete">
+                    </form>
+                    <a href="/inventory" class="pull-right">Go back to inventory</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <% include ./partials/footer %>

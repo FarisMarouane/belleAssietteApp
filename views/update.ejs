@@ -1,41 +1,33 @@
 <% include ./partials/header %>
-
-<div class="container">
-  <h1 class="text-center">Update ingredient status</h1>
-
-    <div >     
-        
-        <form action="/inventory/<%=ingredient._id%>?_method=PUT" method="POST" class="form">
-        <!-- <form class="formNew form" action="/inventory/<%=ingredient._id%>" method="POST" > -->
-            <div class="form-group">
-                <label>Ingredient's picture:</label>
-	            <input type="text" name="item[photoName]"  value="<%=ingredient.photoName%>" class="form-control">
-            </div>
-          <div class="form-group">
-             <label>Name:</label>
-              <input type="text" name="item[name]" value="<%=ingredient.name%>" class="form-control">
-          </div>
-          <div class="form-group">
-            <label>Number of items:</label>
-            <input type="number" name="item[number]" value="<%=ingredient.number%>" class="form-control" min="0">
-          </div>
-           <div class="form-group">
-            <div class="text-center"><label>Or check ingredient item if in stock:</label></div>
-
-            <%if(ingredient.exist){%>
-            	<input class="form-control" type="checkbox" name="item[checkbox]" item[checked] checked >
-            <% } else { %>
-            		<input class="form-control" type="checkbox" name="item[checkbox]">
-            <% } %>
-            
-          </div>                        
-          <button class="text-center btn btn-success pull-right" type="submit">Save changes</button>
-      </form>
-      
-    </div>    
-</div>
-
-<<% include ./partials/footer %>
-
-
-
+    <div class="container">
+        <h1 class="text-center">Update ingredient status</h1>
+        <div>
+            <form action="/inventory/<%=ingredient._id%>?_method=PUT" method="POST" class="form">
+                <!-- <form class="formNew form" action="/inventory/<%=ingredient._id%>" method="POST" > -->
+                <div class="form-group">
+                    <label>Ingredient's picture:</label>
+                    <input type="text" name="item[photoName]" value="<%=ingredient.photoName%>" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Name:</label>
+                    <input type="text" name="item[name]" value="<%=ingredient.name%>" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Number of items:</label>
+                    <input type="number" name="item[number]" value="<%=ingredient.number%>" class="form-control" min="0">
+                </div>
+                <div class="form-group">
+                    <div class="text-center">
+                        <label>Or check ingredient item if in stock:</label>
+                    </div>
+                    <%if(ingredient.exist){%>
+                        <input class="form-control" type="checkbox" name="item[checkbox]" item[checked] checked>
+                        <% } else { %>
+                            <input class="form-control" type="checkbox" name="item[checkbox]">
+                            <% } %>
+                </div>
+                <button class="text-center btn btn-success pull-right" type="submit">Save changes</button>
+            </form>
+        </div>
+    </div>
+<% include ./partials/footer %>
